@@ -9,3 +9,5 @@ target
 /.sbtserver
 .DS_Store
 /project/.sbtserver
+play-fork-run.sbt
+sbt-ui.sbt
