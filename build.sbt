@@ -1,4 +1,4 @@
-name := """maizeApp"""
+name := """maizeWeb"""
 
 version := "2.0-SNAPSHOT"
 
