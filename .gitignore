@@ -11,3 +11,4 @@ target
 /project/.sbtserver
 play-fork-run.sbt
 sbt-ui.sbt
+/project/.sbtserver.lock
