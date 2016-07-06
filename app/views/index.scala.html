@@ -9,13 +9,175 @@
  * argument is a `String` with the title of the page, the second
  * argument is an `Html` object containing the body of the page.
  *@
-@main("www.maizeApp.com") {
+@main("Maize - Find Food Beyond Restaurants", scripts) {
+    <nav class="navbar navbar-static-top nav">
+        <div class="container">
+            <div class="navbar-header">
+                <a id="navbar-brand" class="navbar-brand" href="."><img id="headLogo" class="img-responsive" src="@routes.Assets.versioned("images/Logo.jpg")" alt="Maize" title="MaizeApp" width="94px" height="27px"></a>
+            </div>
+            <div class="text-right blogContainer openSansSemiBold">
+                <a id="blog" class="blog openSansSemiBold hidden-xs hidden-sm" href="https://maizeapp.wordpress.com/">
+                    Visit our blog <i class="fa fa-chevron-right"></i>
+                </a>
+                <a id="blogPhone" class="blog openSansSemiBold hidden-lg hidden-md" href="https://maizeapp.wordpress.com/">
+                    Blog <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+        </div>
+    </nav>
+    <section class="image-bg-fixed-height">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-xs-offset-0 col-md-6 col-md-offset-0">
+                    <img src="@routes.Assets.versioned("images/Logo_Icon.jpg")" alt="" id="logo" class="img-responsive" width="77px" height="93px">
+                </div>
 
-    @*
-     * Get an `Html` object by calling the built-in Play welcome
-    * template and passing a `String` message.
-    *
-    * @play20.welcome(message, style = "Java")
-    *@
-    @message
+            </div>
+            <div class="row">
+                <div class="col-xs-12  col-xs-offset-0 col-md-6 col-md-offset-0">
+                    <h3 class="openSansBold" id="findFood">Find food beyond restaurants</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-xs-offset-0 col-sm-8 col-sm-offset-2 col-md-5 col-md-offset-0 col-lg-4 col-lg-offset-0 slogan">
+                    <p class="openSansLight" id="downLoadmaize">Download Maize and find the best<br class="hideOnSmall"> food trucks, farmer’s markets,<br class="hideOnSmall"> and pop-up chefs everywhere you go.</p>
+                </div>
+            </div>
+            <div class="hidden-xs hidden-sm">
+                <div class="row">
+                    <div class="col-xs-12 col-md-6 ">
+                        <ul id="store" class="list-inline">
+                            <li>
+                                <a href="http://wordpress.redirectingat.com/?id=725X1342&amp;site=maizeapp.wordpress.com&amp;xs=1&amp;isjs=1&amp;url=https%3A%2F%2Fitunes.apple.com%2Fus%2Fapp%2Fmaize-find-food-beyond-restaurants%2Fid1107430839%3Fls%3D1%26mt%3D8&amp;xguid=02ba261903e321d6c9ef919e19372120&amp;xuuid=e6ecf51884edfb0598746df01b2d2f4f&amp;xsessid=a89419951f3d82f51603607e4e643a6c&amp;xcreo=0&amp;xed=0&amp;sref=https%3A%2F%2Fmaizeapp.wordpress.com%2F&amp;xtz=-120" title="Download Maize on the App store">
+                                    <img src="@routes.Assets.versioned("images/Store_Apple.jpg")" alt="get the app on Appstore !" width="135px" height="40px" class="img-responsive" >
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-md-5">
+                        <p class="openSansSemiBold">Coming soon to Google Play.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="hidden-md hidden-lg text-center">
+                    <div class="row">
+                        <div class="col-xs-12 col-md-6" id="storeFootContainer">
+                            <ul id="storeFoot" class="list-inline">
+                                <li>
+                                    <a href="http://wordpress.redirectingat.com/?id=725X1342&amp;site=maizeapp.wordpress.com&amp;xs=1&amp;isjs=1&amp;url=https%3A%2F%2Fitunes.apple.com%2Fus%2Fapp%2Fmaize-find-food-beyond-restaurants%2Fid1107430839%3Fls%3D1%26mt%3D8&amp;xguid=02ba261903e321d6c9ef919e19372120&amp;xuuid=e6ecf51884edfb0598746df01b2d2f4f&amp;xsessid=a89419951f3d82f51603607e4e643a6c&amp;xcreo=0&amp;xed=0&amp;sref=https%3A%2F%2Fmaizeapp.wordpress.com%2F&amp;xtz=-120" title="Download Maize on the App store">
+                                        <img src="@routes.Assets.versioned("images/Store_Apple.jpg")" alt="" width="135px" height="40px" class="img-responsive">
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-md-5">
+                            <p class="openSansSemiBold">Coming soon to Google Play.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-md-6 openSansLight" id="formContainer">
+                    <form action="http://maizeapp.us12.list-manage.com/subscribe/post?u=0ff0b47d0e0bd515fd0957734&amp;id=e8c4c702b1" method="post"
+                    id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" novalidate>
+                        <div class="input-group custom-search-form col-xs-12 col-xs-offset-0 col-sm-6 col-sm-offset-3 col-lg-6 col-md-7 col-lg-offset-0 col-md-offset-0">
+                            <input type="email" class="form-control openSansReg" name="EMAIL" id="mce-EMAIL" value="Enter email for Maize news">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="submit" id="btn-news">
+                                    <i class="fa fa-chevron-right fa-lg"></i>
+                                </button>
+                            </span>
+                        </div>
+                        <div class="input-group custom-search-form col-xs-12 col-xs-offset-0 col-sm-6 col-sm-offset-3 col-lg-6 col-md-7 col-lg-offset-0 col-md-offset-0" id="formInfo">
+                            <span>Email Expected !</span>
+                        </div>
+
+                        <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                            <input type="text" name="b_0ff0b47d0e0bd515fd0957734_e8c4c702b1" tabindex="-1" value="">
+                        </div>
+                    </form>
+                </div>
+
+
+
+                <div class="col-xs-12 col-md-6 text-center">
+                    <div>
+                        <ul id="social" class="list-inline">
+                            <li><div class="twitterContainer">
+                                <a href="https://twitter.com/maizeapp" title="Twitter MaizeApp">
+                                    <img src="@routes.Assets.versioned("images/Social_Twitter.jpg")" alt="" width="45px" height="45px" class="img-responsive">
+                                </a>
+                            </div></li>
+                            <li><div class="facebookContainer">
+                                <a href="https://www.facebook.com/maizeapp" title="FaceBook MaizeApp">
+                                    <img src="@routes.Assets.versioned("images/Social_Facebook.jpg")" alt="" width="45px" height="45px" class="img-responsive">
+                                </a>
+                            </div></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-md-6 openSansBold" id="copy">
+                    <span>&copy; 2016 maize</span>
+                </div>
+            </div>
+                <!-- /.row -->
+        </div>
+            <!-- /.container -->
+    </footer>
+}
+
+@scripts = {
+    <script type="application/javascript">
+            $(function(){
+                function validateEmail(email) {
+                    var re = /^(([^<>()\[\]\\.,;:\s@@"]+(\.[^<>()\[\]\\.,;:\s@@"]+)*)|(".+"))@@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                    return re.test(email);
+                }
+
+                if(res.dppx()>1){
+                    console.log('retina');
+                    $("img").each(function(){
+                        var img = $(this);
+                        img.attr('src', img.attr('src').replace('.','_2X.'));
+                    });
+                }
+
+                $("#formContainer").on('submit', '#mc-embedded-subscribe-form', function(e){
+                    e.preventDefault();
+                    if(!validateEmail($("#mce-EMAIL").val())){
+                        $("#formInfo span").text('Enter a valid email address');
+                        $("#formInfo").show("fast", function() {
+                            setTimeout(function(){ $("#formInfo").hide("fast"); }, 3000);
+                        });
+                        $("#mce-EMAIL").select();
+                    }else{
+                        $.post( $(this).attr('action'), $(this).serialize() );
+                        $("#formInfo span").text('Success! maize will keep you updated.')
+                        $("#formInfo").show("fast", function() {
+                            setTimeout(function(){ $("#formInfo").hide("fast"); }, 3000);
+                        });
+                    }
+                });
+
+                $("#formContainer").on('focus', '#mce-EMAIL', function(e){
+                    if($("#mce-EMAIL").val()=== 'Enter email for Maize news')$("#mce-EMAIL").val('');
+                });
+                $("#formContainer").on('blur', '#mce-EMAIL', function(e){
+                    if($("#mce-EMAIL").val()=== '')$("#mce-EMAIL").val('Enter email for Maize news');
+                });
+            });;
+    </script>
 }
