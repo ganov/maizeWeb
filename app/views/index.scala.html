@@ -9,19 +9,24 @@
  * argument is a `String` with the title of the page, the second
  * argument is an `Html` object containing the body of the page.
  *@
-@main("Maize - Find Food Beyond Restaurants", scripts) {
+@main(Messages("index.title"), scripts) {
     @navBar()
 
     @mainSection()
 
     @systemSection()
 
-    @footer()
+    @partnersSection()
 
+    @teamSection()
+
+    @footer()
 }
 
 @scripts = {
     <script type="application/javascript">
+            var newsPlaceHolder = "@Messages("section.footer.form.news.placeholder")";
+            var newsSuccess = "@Messages("section.footer.form.news.success")";
             $(function(){
                 function validateEmail(email) {
                     var re = /^(([^<>()\[\]\\.,;:\s@@"]+(\.[^<>()\[\]\\.,;:\s@@"]+)*)|(".+"))@@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -29,7 +34,6 @@
                 }
 
                 if(res.dppx()>1){
-                    console.log('retina');
                     $("img").each(function(){
                         var img = $(this);
                         img.attr('src', img.attr('src').replace('.','_2X.'));
@@ -46,7 +50,7 @@
                         $("#mce-EMAIL").select();
                     }else{
                         $.post( $(this).attr('action'), $(this).serialize() );
-                        $("#formInfo span").text('Success! maize will keep you updated.')
+                        $("#formInfo span").text(newsSuccess);
                         $("#formInfo").show("fast", function() {
                             setTimeout(function(){ $("#formInfo").hide("fast"); }, 3000);
                         });
@@ -54,11 +58,11 @@
                 });
 
                 $("#formContainer").on('focus', '#mce-EMAIL', function(e){
-                    if($("#mce-EMAIL").val()=== 'Enter email for Maize news')$("#mce-EMAIL").val('');
+                    if($("#mce-EMAIL").val()=== newsPlaceHolder)$("#mce-EMAIL").val('');
                 });
                 $("#formContainer").on('blur', '#mce-EMAIL', function(e){
-                    if($("#mce-EMAIL").val()=== '')$("#mce-EMAIL").val('Enter email for Maize news');
+                    if($("#mce-EMAIL").val()=== '')$("#mce-EMAIL").val(newsPlaceHolder);
                 });
-            });;
+            });
     </script>
 }
