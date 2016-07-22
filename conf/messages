@@ -1,0 +1,41 @@
+index.title=Maize - Find Food Beyond Restaurants
+
+navbar.visitBlog=Visit our blog
+navbar.blog=Blog
+
+footer.copy=&copy; 2016 maize
+
+section.main.findFood=Find food beyond restaurants
+section.main.downLoadmaize.1=Download Maize and find the best
+section.main.downLoadmaize.2=food trucks, farmer’s markets,
+section.main.downLoadmaize.3=and pop-up chefs everywhere you go.
+section.main.downLoadmaize.linkIOS.title=Download Maize on the App store
+section.main.downLoadmaize.android=Coming soon to Google Play.
+
+section.system.slogan=Food outside the restaurant system
+section.system.homechef.title=Home chefs
+section.system.homechef.slogan1=Buy home cooked meals
+section.system.homechef.slogan2=directly from home chefs.
+section.system.farmers.title=Farmers markets
+section.system.farmers.slogan1=Buy freshly made meals
+section.system.farmers.slogan2=directly from producers.
+section.system.trucks.title=Food trucks
+section.system.trucks.slogan1=Buy unique meals
+section.system.trucks.slogan2=from mobile vendors.
+section.system.popup.title=Pop up dinning
+section.system.popup.slogan1=Buy at one-of-a-kind
+section.system.popup.slogan2=food events.
+
+section.partners.slogan=Our partners
+
+section.team.slogan=Our team
+section.team.fav.food.slogan=Current favorite Street cuisine
+
+section.team.cedric.fav.food=Tofu bun from the chairman.
+section.team.pashu.fav.food=Tofu bun from the chairman.
+section.team.sophian.fav.food=Tofu bun from the chairman.
+section.team.elie.fav.food=Tofu bun from the chairman.
+
+section.footer.form.news.mail.expected=Email Expected !
+section.footer.form.news.placeholder=Enter email for Maize news
+section.footer.form.news.success=Success! maize will keep you updated.
