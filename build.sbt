@@ -16,3 +16,5 @@ libraryDependencies ++= Seq(
   "org.webjars" % "jquery" % "2.2.4",
   "org.webjars" % "font-awesome" % "4.6.3"
 )
+
+includeFilter in (Assets, LessKeys.less) := "fontFamily.less" | "main.less"
