@@ -4,7 +4,7 @@
     * two arguments, a `String` for the title of the page and an `Html`
     * object to insert into the body of the page.
     *@
-    @(title: String, scripts: Html = Html(""))(content: Html)
+    @(title: String, scripts: Html = Html(""), webJarAssets: WebJarAssets)(content: Html)
 
 <!DOCTYPE html>
 <html lang="en">
@@ -12,17 +12,16 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="Find food beyond restaurants, find the best food trucks, farmer’s markets, and pop-up chefs everywhere you go.">
-        <meta name="keywords" content="maze, amaze, local, finder, market, truck, bread, grub, drink, eat, home, chef, hipster, oakland, real, cottage, spot, craft">
-        @* Here's where we render the page title `String`. *@
+        <meta name="description" content="@Messages("meta.description")">
+        <meta name="keywords" content="@Messages("meta.keywords")">
         <title>@title</title>
 
-        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/main.css")">
+        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/fontFamily.css")">
         <!-- Custom CSS -->
-        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/full-width-pics.min.css")">
+        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/main.css")">
         <!-- Bootstrap -->
-        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/font-awesome.min.css")">
-        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/bootstrap.min.css")">
+        <link rel="stylesheet" media="screen" href="@routes.WebJarAssets.at(webJarAssets.locate("css/font-awesome.min.css"))" >
+        <link rel="stylesheet" media="screen" href='@routes.WebJarAssets.at(webJarAssets.locate("css/bootstrap.min.css"))'>
 
         <link rel="shortcut icon" type="image/png" href="@routes.Assets.versioned("images/favicon.png")">
 
@@ -32,8 +31,8 @@
                     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
             })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-            //ga('create', 'UA-74048637-1', 'auto');
-            //ga('send', 'pageview');
+            ga('create', '@Messages("meta.google.analytics.id")', 'auto');
+            ga('send', 'pageview');
         </script>
         <script type="application/javascript" src="@routes.Assets.versioned("javascripts/res.min.js")"></script>
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -49,10 +48,10 @@
         @content
 
         <!-- jQuery -->
-        <script type="application/javascript" src="@routes.Assets.versioned("javascripts/jquery-1.12.0.min.js")"></script>
+        <script type="application/javascript" src="@routes.WebJarAssets.at(webJarAssets.locate("jquery.min.js"))"></script>
 
         <!-- Bootstrap Core JavaScript -->
-        <script type="application/javascript" src="@routes.Assets.versioned("javascripts/bootstrap.min.js")"></script>
+        <script type="application/javascript" src="@routes.WebJarAssets.at(webJarAssets.locate("js/bootstrap.min.js"))"></script>
 
         @scripts
     </body>
