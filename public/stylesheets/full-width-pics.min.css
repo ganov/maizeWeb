@@ -5,4 +5,4 @@ section.partnersSection{ background-color : #f8f3ea; }  section.teamSection div.
 section.teamSection div.thumbnail p.teamName, section.teamSection div.thumbnail p.teamDesc { color: #ffffff } section.teamSection div.thumbnail p.teamSurName, section.teamSection div.thumbnail p.teamSocial a, section.teamSection div.thumbnail p.teamSocial { color: #7BCBC8 }
 p.teamName { font-size: 22px; margin-bottom: 0;} p.teamSurName, p.teamSocial { font-size: 18px;} p.teamDesc { font-size: 14px; line-height: 20px;} p.teamSocial{margin-top: 10px;}
 body .row{margin-left: 0;margin-right: 0;}
-.teamDesc{min-height: 60px;}
+.teamDesc{min-height: 60px;} section.partnersSection .thumbnail a {text-decoration: none} section.partnersSection .thumbnail {min-height: 210px}
