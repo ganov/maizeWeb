@@ -46,3 +46,10 @@ section.team.elie.fav.food=The Chairman''s Tofu bun.
 section.footer.form.news.mail.expected=Email Expected !
 section.footer.form.news.placeholder=Enter email for Maize news
 section.footer.form.news.success=Success! maize will keep you updated.
+
+
+
+# Admin Lang
+application.profile.userR1=User
+application.profile.userR2=Vendor
+application.profile.userR3=Admin
