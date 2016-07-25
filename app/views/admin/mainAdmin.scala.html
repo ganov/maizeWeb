@@ -8,39 +8,43 @@
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="robots" content="noindex, nofollow">
-    <title>@title</title>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noindex, nofollow">
+        <title>@title</title>
+            <!-- Bootstrap -->
+        <link rel="stylesheet" media="screen" href="@routes.WebJarAssets.at(webJarAssets.locate("css/font-awesome.min.css"))" >
+        <link rel="stylesheet" media="screen" href='@routes.WebJarAssets.at(webJarAssets.locate("css/bootstrap.min.css"))'>
 
-      <!-- Bootstrap -->
-    <link rel="stylesheet" media="screen" href="@routes.WebJarAssets.at(webJarAssets.locate("css/font-awesome.min.css"))" >
-    <link rel="stylesheet" media="screen" href='@routes.WebJarAssets.at(webJarAssets.locate("css/bootstrap.min.css"))'>
+            <!-- Custom CSS -->
+        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/mainAdmin.css")">
 
-    <link rel="shortcut icon" type="image/png" href="@routes.Assets.versioned("images/favicon.png")">
+        <link rel="shortcut icon" type="image/png" href="@routes.Assets.versioned("images/favicon.png")">
 
-    <script type="application/javascript" src="@routes.Assets.versioned("javascripts/res.min.js")"></script>
-      <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-      <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-      <!--[if lt IE 9]>
+        <script type="application/javascript" src="@routes.Assets.versioned("javascripts/res.min.js")"></script>
+            <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+            <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+            <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
             <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
-  </head>
-  <body>
+    </head>
+    <body>
 
+        @navBarAdmin()
 
+        @content
 
-    @content
+        @footerAdmin()
 
-      <!-- jQuery -->
-    <script type="application/javascript" src="@routes.WebJarAssets.at(webJarAssets.locate("jquery.min.js"))"></script>
+            <!-- jQuery -->
+        <script type="application/javascript" src="@routes.WebJarAssets.at(webJarAssets.locate("jquery.min.js"))"></script>
 
-      <!-- Bootstrap Core JavaScript -->
-    <script type="application/javascript" src="@routes.WebJarAssets.at(webJarAssets.locate("js/bootstrap.min.js"))"></script>
+            <!-- Bootstrap Core JavaScript -->
+        <script type="application/javascript" src="@routes.WebJarAssets.at(webJarAssets.locate("js/bootstrap.min.js"))"></script>
 
-    @scripts
-  </body>
+        @scripts
+    </body>
 </html>
