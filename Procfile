@@ -1,1 +1,1 @@
-web: target/universal/stage/bin/maizeweb -Dhttp.port=$PORT -Dconfig.file=./conf/applicationHeroku.conf
+web: target/universal/stage/bin/maizeweb -Dhttp.port=$PORT -Dconfig.file=./conf/applicationHeroku.conf -Dplay.evolutions.db.default.autoApply=true
