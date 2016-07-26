@@ -44,7 +44,7 @@ public class AuthentForm {
         Map<String, List<ValidationError>> errors = new HashMap<>();
         List<ValidationError> list = new ArrayList<>();
         try {
-            user = UserService.authenticate(email, password, cache);
+            user = UserService.authenticate(email, password);
         } catch (Exception e) {
             list.add(new ValidationError("email",  Messages.get("form.authent.invalid.user.or.password")));
             errors.put("email", list);

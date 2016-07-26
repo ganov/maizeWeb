@@ -2,6 +2,7 @@ package services;
 
 import models.User;
 import org.apache.commons.lang3.StringUtils;
+import play.api.Play;
 import play.cache.CacheApi;
 import play.mvc.Http;
 import utils.ConstantUtils;
@@ -21,12 +22,13 @@ public class UserService {
      * @return the user if authenticate performed, null otherwise
      * @throws Exception
      */
-    public static User authenticate(final String email, final String clearPassword, final CacheApi cache) throws Exception {
+    public static User authenticate(final String email, final String clearPassword) throws Exception {
         // get the user with email only to keep the salt password
         User user = User.findByEmail(email);
         if (user != null) {
             if (Arrays.equals(user.getPassword(), PasswordUtils.getSha512(clearPassword))) {
-                return putUserInCache(user, cache);
+                putUserInCache(user);
+                return user;
             }
         }
         return null;
@@ -37,8 +39,9 @@ public class UserService {
      *
      * @return the connected user
      */
-    public static User getUserFromCache(CacheApi cache) {
+    public static User getUserFromCache() {
         User user = null;
+        CacheApi cache = Play.current().injector().instanceOf(CacheApi.class);
         if (isConnected()) {
             user = (User) cache.get(getUuid() + ConstantUtils.EMAIL);
             if (user == null) {
@@ -53,10 +56,9 @@ public class UserService {
      * and Usertime (session expired) in the session.
      *
      * @param user the user to put in cache
-     * @param cache the cache Api
      * @return true if all is ok, false otherwise.
      */
-    public static User putUserInCache(final User user, CacheApi cache) {
+    public static User putUserInCache(final User user) {
         if (user == null) {
             Http.Context.current().session().clear();
         } else {
@@ -68,6 +70,7 @@ public class UserService {
             }
             Http.Context.current().session().put(ConstantUtils.EMAIL, user.getEmail());
             // Put user in cache
+            CacheApi cache = Play.current().injector().instanceOf(CacheApi.class);
             cache.set(uuid + ConstantUtils.EMAIL, user);
         }
         return user;

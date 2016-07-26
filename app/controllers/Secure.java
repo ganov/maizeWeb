@@ -18,7 +18,7 @@ public class Secure extends Security.Authenticator {
 
     @Override
     public String getUsername(final Http.Context ctx) {
-        User user = UserService.getUserFromCache(cache);
+        User user = UserService.getUserFromCache();
         return user != null ? user.getIdentifier() : null;
     }
 
