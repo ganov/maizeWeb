@@ -16,6 +16,16 @@ public final class ConstantUtils {
     public static final String APP_ADM_NAME = CommonUtils.getConfigString("appAdmin.name");
 
     /**
+     * User Key for cache and session.
+     */
+    public static final String EMAIL = "email";
+
+    /**
+     * UUID Key for cache.
+     */
+    public static final String UUID = "uuid";
+
+    /**
      * Default constructor.
      */
     private ConstantUtils() {
