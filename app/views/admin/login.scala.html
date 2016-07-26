@@ -1,0 +1,30 @@
+@import b3.vertical.fieldConstructor
+@import play.data.Form
+@import models.formsModel.AuthentForm
+@(loginForm: Form[AuthentForm])
+
+@if(loginForm.hasGlobalErrors) {
+    <p class="error text-center">
+        <span class="label label-danger">@loginForm.globalError.message</span>
+    </p>
+}
+<fieldset>
+@b3.form(controllers.routes.AdminController.authenticateUser(), 'id -> "loginForm", 'novalidate -> "novalidate") {
+    @b3.inputWrapped("email", loginForm("email"), '_label -> Messages("page.changePWD.form.label.login"), 'placeholder -> Messages("page.changePWD.form.placeHolder.login")) { input =>
+        <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-at"></i></span>
+            @input
+        </div>
+    }
+    @b3.inputWrapped("password", loginForm("password"), '_label -> Messages("page.changePWD.form.label.password"), 'placeholder -> Messages("page.changePWD.form.placeHolder.password")) { input =>
+        <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-key"></i></span>
+            @input
+        </div>
+    }
+
+    @b3.submit('class -> "btn btn-lg btn-block  btn-primary-maize") {
+        <i class="fa fa-sign-in"></i>&nbsp;@Messages("page.login.form.label.submit")
+    }
+}
+</fieldset>

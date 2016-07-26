@@ -2,7 +2,6 @@ index.title=Maize - Find Food Beyond Restaurants
 meta.description=Find food beyond restaurants, find the best food trucks, farmer''s markets, and pop-up chefs everywhere you go.
 meta.keywords=maze, amaze, local, finder, market, truck, bread, grub, drink, eat, home, chef, hipster, oakland, real, cottage, spot, craft
 meta.google.analytics.id=UA-74048637-1
-# meta.google.analytics.id=UA-74048637-1
 
 navbar.visitBlog=Visit our blog
 navbar.blog=Blog
@@ -53,3 +52,12 @@ section.footer.form.news.success=Success! maize will keep you updated.
 application.profile.userR1=User
 application.profile.userR2=Vendor
 application.profile.userR3=Admin
+
+form.authent.invalid.user.or.password=Login or password invalid.
+page.changePWD.form.label.login=Login :
+page.changePWD.form.label.password=Password :
+page.changePWD.form.placeHolder.login=example@example.com
+page.changePWD.form.placeHolder.password=Password
+page.login.form.label.submit=Sign in
+
+dasboard.title=Dashboard

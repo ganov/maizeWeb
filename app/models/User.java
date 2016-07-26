@@ -210,4 +210,22 @@ public class User extends Model implements Subject {
     public String getIdentifier() {
         return email;
     }
+
+    /**
+     * Specific over ride tostring() method.
+     */
+    @Override
+    public String toString() {
+        return email;
+    }
+
+    /**
+     * Retrieve an user from an email.
+     *
+     * @param email email to search
+     * @return an user
+     */
+    public static User findByEmail(String email) {
+        return FIND.where().eq("email", email.toLowerCase()).findUnique();
+    }
 }
