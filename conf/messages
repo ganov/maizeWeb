@@ -60,4 +60,12 @@ page.changePWD.form.placeHolder.login=example@example.com
 page.changePWD.form.placeHolder.password=Password
 page.login.form.label.submit=Sign in
 
+page.foodTrucker.form.label.name=Your name
+page.foodTrucker.form.label.businessName=Your pop-up
+page.foodTrucker.form.label.email=Your email
+page.foodTrucker.form.label.phone=Your phone number
+page.foodTrucker.form.label.submit=Submit
+page.foodTrucker.form.label.ok=Registration succeed. Maize will contact you soon!
+
+
 dasboard.title=Dashboard

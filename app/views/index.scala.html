@@ -1,14 +1,7 @@
-@*
- * This template takes a single argument, a String containing a
- * message to display.
- *@
-@(message: String)(webJarAssets: WebJarAssets)
+@import play.data.Form
+@import models.FoodTrucker
+@(message: String, foodTruckerForm: Form[FoodTrucker])(webJarAssets: WebJarAssets)
 
-@*
- * Call the `main` template with two arguments. The first
- * argument is a `String` with the title of the page, the second
- * argument is an `Html` object containing the body of the page.
- *@
 @main(Messages("index.title"), scripts, webJarAssets) {
     @navBar()
 
@@ -17,6 +10,8 @@
     @systemSection()
 
     @partnersSection()
+
+    @foodTruckerFormSection(foodTruckerForm)
 
     @teamSection()
 
@@ -28,6 +23,10 @@
             var newsPlaceHolder = "@Messages("section.footer.form.news.placeholder")";
             var newsSuccess = "@Messages("section.footer.form.news.success")";
             $(function(){
+                if($("div.has-error").length > 0){
+                    $("div.has-error input").eq(0).focus();
+                }
+
                 function validateEmail(email) {
                     var re = /^(([^<>()\[\]\\.,;:\s@@"]+(\.[^<>()\[\]\\.,;:\s@@"]+)*)|(".+"))@@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
                     return re.test(email);
