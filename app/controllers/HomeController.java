@@ -1,8 +1,13 @@
 package controllers;
 
-import play.mvc.*;
-
-import views.html.*;
+import models.FoodTrucker;
+import play.data.Form;
+import play.data.FormFactory;
+import play.i18n.Messages;
+import play.mvc.Controller;
+import play.mvc.Result;
+import play.mvc.Results;
+import views.html.index;
 
 import javax.inject.Inject;
 
@@ -13,6 +18,7 @@ import javax.inject.Inject;
 public class HomeController extends Controller {
 
     @Inject WebJarAssets webJarAssets;
+    @Inject FormFactory formFactory;
 
     /**
      * An action that renders an HTML page with a welcome message.
@@ -21,7 +27,20 @@ public class HomeController extends Controller {
      * <code>GET</code> request with a path of <code>/</code>.
      */
     public Result index() {
-        return ok(index.render("", webJarAssets));
+        return ok(index.render("", formFactory.form(FoodTrucker.class), webJarAssets));
+    }
+
+    public Result foodTruckerContact() {
+        Form<FoodTrucker> foodTruckerForm = formFactory.form(FoodTrucker.class).bindFromRequest();
+
+        if (foodTruckerForm.hasErrors()) {
+            return badRequest(index.render("", foodTruckerForm, webJarAssets));
+        } else {
+            FoodTrucker foodTrucker = foodTruckerForm.get();
+            flash("info", Messages.get("page.foodTrucker.form.label.ok"));
+            foodTrucker.save();
+            return Results.redirect(routes.HomeController.index());
+        }
     }
 
 }

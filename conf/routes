@@ -4,6 +4,7 @@
 
 # An example controller showing a sample home page
 GET         /                      controllers.HomeController.index
+POST        /                      controllers.HomeController.foodTruckerContact()
 
 GET         /administration        controllers.AdminController.index
 GET         /dashboard             controllers.DashboardController.index

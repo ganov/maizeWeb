@@ -1,6 +1,5 @@
 package controllers;
 
-import enums.ApplicationProfile;
 import models.User;
 import models.formsModel.AuthentForm;
 import play.data.Form;
