@@ -1,6 +1,7 @@
 package controllers;
 
 import models.FoodTrucker;
+import models.MessageNotifier;
 import play.data.Form;
 import play.data.FormFactory;
 import play.i18n.Messages;
@@ -8,8 +9,10 @@ import play.mvc.Controller;
 import play.mvc.Result;
 import play.mvc.Results;
 import views.html.index;
+import views.html.foodTruckerFormSection;
 
 import javax.inject.Inject;
+import static play.libs.Json.toJson;
 
 /**
  * This controller contains an action to handle HTTP requests
@@ -34,12 +37,14 @@ public class HomeController extends Controller {
         Form<FoodTrucker> foodTruckerForm = formFactory.form(FoodTrucker.class).bindFromRequest();
 
         if (foodTruckerForm.hasErrors()) {
-            return badRequest(index.render("", foodTruckerForm, webJarAssets));
+            return ok(toJson(MessageNotifier.newDefaultErrorMessageNotifier(foodTruckerFormSection.render(foodTruckerForm).toString())));
         } else {
             FoodTrucker foodTrucker = foodTruckerForm.get();
-            flash("info", Messages.get("page.foodTrucker.form.label.ok"));
             foodTrucker.save();
-            return Results.redirect(routes.HomeController.index());
+            MessageNotifier tmpMsg = new MessageNotifier();
+            tmpMsg.type = MessageNotifier.Type.info;
+            tmpMsg.message = Messages.get("page.foodTrucker.form.label.ok");
+            return ok(toJson(tmpMsg));
         }
     }
 
