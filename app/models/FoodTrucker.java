@@ -10,9 +10,6 @@ import javax.validation.constraints.NotNull;
  * Food Trucker Model.
  */
 @Entity
-@Table(
-        uniqueConstraints = @UniqueConstraint(columnNames={"email"})
-)
 public class FoodTrucker extends Model {
 
     @Id

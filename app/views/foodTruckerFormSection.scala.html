@@ -9,18 +9,25 @@
             </h2>
             <p id="sloganSmallFoodTrucker" class="text-center openSansReg">We can help you get started.</p>
             <div class="col-lg-6 col-lg-offset-3">
+                <div class="col-lg-6 col-lg-offset-3">
+                    <button id="inTouch" class="btn btn-block btn-primary-maize openSansReg">@Messages("page.foodTrucker.form.label.inTouch")</button>
+                </div>
                 @b3.form(controllers.routes.HomeController.foodTruckerContact(), 'id -> "foodTruckerForm", 'novalidate -> "novalidate") {
                     @b3.text(foodTruckerForm("fullName"), '_label -> "", 'placeholder -> Messages("page.foodTrucker.form.label.name"), 'class -> "openSansReg")
                     @b3.text(foodTruckerForm("businessName"), '_label -> "", 'placeholder -> Messages("page.foodTrucker.form.label.businessName"), 'class -> "openSansReg")
                     @b3.text(foodTruckerForm("email"), '_label -> "", 'placeholder -> Messages("page.foodTrucker.form.label.email"), 'class -> "openSansReg")
                     @b3.text(foodTruckerForm("phone"), '_label -> "", 'placeholder -> Messages("page.foodTrucker.form.label.phone"), 'class -> "openSansReg")
-                    <div class="col-lg-6 col-lg-offset-3">
+                    <div class="col-lg-6 col-lg-offset-3" id="submitContainer">
                         @b3.free('_id -> "idFormGroup") {
                             <button type="submit" class="btn btn-block btn-primary-maize openSansReg">@Messages("page.foodTrucker.form.label.submit")</button>
                         }
                     </div>
                 }
+                <div class="col-lg-12 text-center openSansSemiBold">
+                    <p id="rtnMsg"></p>
+                </div>
             </div>
         </div>
     </div>
 </section>
+

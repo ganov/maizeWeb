@@ -11,7 +11,9 @@
 
     @partnersSection()
 
+    <div>
     @foodTruckerFormSection(foodTruckerForm)
+    </div>
 
     @teamSection()
 
@@ -23,6 +25,32 @@
             var newsPlaceHolder = "@Messages("section.footer.form.news.placeholder")";
             var newsSuccess = "@Messages("section.footer.form.news.success")";
             $(function(){
+                $("body").on('click', "#inTouch", function(e){
+                    $(this).hide();
+                    $("#foodTruckerForm").show('fast');
+                });
+
+                $("body").on('submit', "#foodTruckerForm", function(e){
+                    e.preventDefault();
+                    $.ajax({
+                        dataType: "json",
+                        data: $("#foodTruckerForm").serialize(),
+                        url: $("#foodTruckerForm").attr('action'),
+                        type: "POST",
+                        success: function(rtn) {
+                            if(rtn.type === "error"){
+                                $("#foodTruckerSection").parent().html(rtn.html);
+                                $("#foodTruckerForm").show();
+                                $("#inTouch").hide();
+                            }else{
+                                $("#rtnMsg").html(rtn.message);
+                                $(".has-error").removeClass("has-error");
+                                $(".help-block").remove();
+                            }
+                        }
+                    });
+                });
+
                 if($("div.has-error").length > 0){
                     $("div.has-error input").eq(0).focus();
                 }

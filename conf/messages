@@ -65,7 +65,8 @@ page.foodTrucker.form.label.businessName=Your pop-up
 page.foodTrucker.form.label.email=Your email
 page.foodTrucker.form.label.phone=Your phone number
 page.foodTrucker.form.label.submit=Submit
-page.foodTrucker.form.label.ok=Registration succeed. Maize will contact you soon!
+page.foodTrucker.form.label.ok=Your information was submitted, we will be in touch with you next.
+page.foodTrucker.form.label.inTouch=Get in touch
 
 
 dasboard.title=Dashboard
