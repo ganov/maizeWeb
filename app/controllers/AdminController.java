@@ -65,4 +65,13 @@ public class AdminController extends Controller {
         }
     }
 
+    /**
+     * Logout.
+     * @return Result Redirect to login Page
+     */
+    public Result logout(){
+        Http.Context.current().session().clear();
+        return Results.redirect( routes.AdminController.index() );
+    }
+
 }

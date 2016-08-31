@@ -9,6 +9,7 @@ POST        /                      controllers.HomeController.foodTruckerContact
 GET         /administration        controllers.AdminController.index
 GET         /dashboard             controllers.DashboardController.index
 POST        /login                 controllers.AdminController.authenticateUser()
+GET         /logout                controllers.AdminController.logout
 
 # Map static resources from the /public folder to the /assets URL path
 GET         /assets/*file          controllers.Assets.versioned(path="/public", file: Asset)

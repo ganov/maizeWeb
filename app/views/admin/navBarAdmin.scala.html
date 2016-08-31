@@ -1,3 +1,5 @@
+@import be.objectify.deadbolt.java.views.html.subjectPresent
+
 <nav class="navbar navbar-default navbar-fixed-top" id="navMaize">
     <div class="container">
         <div class="navbar-header">
@@ -7,5 +9,12 @@
                 <img src="@routes.Assets.versioned("images/Logo_2X.png")" alt="" title="MaizeApp - Administration" class="brandLogo">
             </a>
         </div>
+        @subjectPresent() {
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a id="logoutBtn" href="@controllers.routes.AdminController.logout()" >Logout&nbsp;<i class="fa fa-sign-out"></i></a></li>
+                </ul>
+            </div>
+        }
     </div>
 </nav>

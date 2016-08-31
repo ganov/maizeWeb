@@ -4,6 +4,7 @@ import be.objectify.deadbolt.java.ConfigKeys;
 import be.objectify.deadbolt.java.DeadboltHandler;
 import be.objectify.deadbolt.java.DynamicResourceHandler;
 import be.objectify.deadbolt.java.models.Subject;
+import models.User;
 import play.mvc.Http;
 import play.mvc.Result;
 
@@ -25,15 +26,8 @@ public class CommonDeadboltHandler implements DeadboltHandler {
 
     @Override
     public CompletionStage<Optional<? extends Subject>> getSubject(Http.Context context) {
-        /*
-        Http.Context.current.set(context);
-        return UserService.getUserFromCache();
-
-        final Http.Cookie userCookie = context.request().cookie("user");
-
-        return CompletableFuture.supplyAsync(() -> Optional.ofNullable(User.findByUserName(userCookie.value())));
-        */
-        return null;
+        String email = context.current().session().get("email");
+        return CompletableFuture.supplyAsync(() -> Optional.ofNullable(User.findByEmail(email)));
     }
 
     @Override

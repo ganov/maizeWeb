@@ -7,7 +7,6 @@ import play.data.FormFactory;
 import play.i18n.Messages;
 import play.mvc.Controller;
 import play.mvc.Result;
-import play.mvc.Results;
 import views.html.index;
 import views.html.foodTruckerFormSection;
 

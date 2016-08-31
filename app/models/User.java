@@ -226,6 +226,9 @@ public class User extends Model implements Subject {
      * @return an user
      */
     public static User findByEmail(String email) {
-        return FIND.where().eq("email", email.toLowerCase()).findUnique();
+        if(email != null) {
+            email = email.toLowerCase();
+        }
+        return FIND.where().eq("email", email).findUnique();
     }
 }
