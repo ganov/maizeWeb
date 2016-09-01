@@ -7,6 +7,7 @@ import be.objectify.deadbolt.java.models.Subject;
 import models.User;
 import play.mvc.Http;
 import play.mvc.Result;
+import services.UserService;
 
 import java.util.Optional;
 import java.util.concurrent.CompletionStage;
@@ -26,8 +27,13 @@ public class CommonDeadboltHandler implements DeadboltHandler {
 
     @Override
     public CompletionStage<Optional<? extends Subject>> getSubject(Http.Context context) {
-        String email = context.current().session().get("email");
-        return CompletableFuture.supplyAsync(() -> Optional.ofNullable(User.findByEmail(email)));
+        User user = null;
+        if(UserService.isConnected()) {
+            user = UserService.getUserFromCache();
+        }
+
+        final User finalUser = user;
+        return CompletableFuture.supplyAsync(() -> Optional.ofNullable(finalUser));
     }
 
     @Override
