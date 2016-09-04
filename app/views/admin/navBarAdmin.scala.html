@@ -1,4 +1,7 @@
 @import be.objectify.deadbolt.java.views.html.subjectPresent
+@import be.objectify.deadbolt.java.views.html.restrict
+@import be.objectify.deadbolt.java.utils.TemplateUtils.{allOf, anyOf}
+@import enums.ApplicationProfile
 
 <nav class="navbar navbar-default navbar-fixed-top" id="navMaize">
     <div class="container">
@@ -9,12 +12,23 @@
                 <img src="@routes.Assets.versioned("images/Logo_2X.png")" alt="" title="MaizeApp - Administration" class="brandLogo">
             </a>
         </div>
+
         @subjectPresent() {
             <div id="navbar" class="collapse navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-user-secret"></i> &nbsp;@Messages("navbar.admin")&nbsp; <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                            <li id="formContact"    ><a href="@controllers.routes.FormContactControllers.index()"><i class="fa fa-diamond"></i>&nbsp;@Messages("formContact.title")</a></li>
+                        </ul>
+                    </li>
                     <li><a id="logoutBtn" href="@controllers.routes.AdminController.logout()" >Logout&nbsp;<i class="fa fa-sign-out"></i></a></li>
                 </ul>
             </div>
+
         }
     </div>
 </nav>
+

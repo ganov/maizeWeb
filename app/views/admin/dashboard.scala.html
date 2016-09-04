@@ -2,7 +2,7 @@
 * This template takes a single argument, a String containing a
 * message to display.
 *@
-@(message: String, foodTruckers: List[FoodTrucker] )(webJarAssets: WebJarAssets)
+@(message: String)(webJarAssets: WebJarAssets)
 @*
 * Call the `main` template with two arguments. The first
 * argument is a `String` with the title of the page, the second
@@ -11,31 +11,8 @@
 @mainAdmin(Messages("dasboard.title"), scripts, webJarAssets) {
     <div id="firstContainer" class="container">
         <div class="row">
-            <h1 class="page-header" id="type">
-                Contact form
-            </h1>
-            <div class="col-md-10 col-md-offset-1">
-                <table class="table table-bordered table-hover table-condensed">
-                    <thead>
-                        <tr>
-                            <th>Email</th>
-                            <th>Full Name</th>
-                            <th>Business Name</th>
-                            <th>Phone</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @for(foodTrucker <- foodTruckers){
-                            <tr>
-                                <td>@foodTrucker.getEmail</td>
-                                <td>@foodTrucker.getFullName</td>
-                                <td>@foodTrucker.getBusinessName</td>
-                                <td>@foodTrucker.getPhone</td>
-                            </tr>
-                        }
-                    </tbody>
-                </table>
-            </div>
+            Admin home page is under construction.
+            Please use header menu.
         </div>
     </div>
 }

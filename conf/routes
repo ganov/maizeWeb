@@ -8,6 +8,7 @@ POST        /                      controllers.HomeController.foodTruckerContact
 
 GET         /administration        controllers.AdminController.index
 GET         /dashboard             controllers.DashboardController.index
+GET         /contactForm           controllers.FormContactControllers.index
 POST        /login                 controllers.AdminController.authenticateUser()
 GET         /logout                controllers.AdminController.logout
 

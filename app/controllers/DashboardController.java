@@ -1,11 +1,9 @@
 package controllers;
 
-import models.FoodTrucker;
 import play.mvc.Result;
 import views.html.admin.dashboard;
 
 import javax.inject.Inject;
-import java.util.List;
 
 /**
  * Dashborad Controller.
@@ -19,7 +17,6 @@ public class DashboardController extends SecureController {
      * @return Result due page.
      */
     public Result index() {
-        List<FoodTrucker> allFoodtrucker = FoodTrucker.FIND.all();
-        return ok(dashboard.render("", allFoodtrucker, webJarAssets));
+        return ok(dashboard.render("", webJarAssets));
     }
 }
